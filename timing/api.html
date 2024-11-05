@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let url="https://fakestoreapi.com/products";
+        // let data = fetch(url);
+
+        // data.then((e)=>e.json()).then((e)=>console.log(e))
+        // console.log(data);
+        // data.then((e)=>e.json()).then((e)=>{
+        //     let res=e;
+        //     for(i of res){
+        //         let div=document.createElement('div')
+        //         div.innerHTML=i.title
+        //         document.body.appendChild(div)
+        //         console.log(i.title);
+                
+        //     }
+        // })
+
+
+
+
+
+        let url='https://fakestoreapi.com/products/categories';
+        let data =fetch(url);
+
+        data.then((e)=>e.json()).then((e)=>console.log(e))
+
+        // data.then((e)=>e.json()).then((e)=>console.log(e))
+        // data.then((e)=>{console.log(e)})
+
+
+
+        // data.then((e)=>e.json()).then((e)=>{
+        //     let res=e;
+        //     for(i of res){
+        //         console.log(i.electronics);
+        //     }
+        // })
+
+
+
+    </script>
+</body>
+</html>

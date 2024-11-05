@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="cart">
+        <li id="clthes">clothes</li>
+        <li id="laps">laptops</li>
+        <li id="bag">bags</li>
+        <li id="mbles">mobiles</li>
+    </ul>
+    <p id="products"></p>
+    <script>
+        let cart=document.getElementById("cart")
+        let clothes=document.getElementById("clthes")
+        let laptops=document.getElementById("laps")
+        let bags=document.getElementById("bag")
+        let mobiles=document.getElementById("mbles")
+        let product=document.getElementById("products")
+        // clothes.addEventListener("click",()=>{
+        //     product.innerHTML="clothes are selected"
+        // })
+        // laptops.addEventListener("click",()=>{
+        //     product.innerHTML="laptops are selected"
+        // })
+        // bags.addEventListener("click",()=>{
+        //     product.innerHTML="bag are selected"
+        // })
+        // mobiles.addEventListener("click",()=>{
+        //     product.innerHTML="mobiles are selected"
+        // })
+
+        cart.addEventListener("click",(e)=>{
+            console.log(e)
+        })
+    </script>
+</body>
+</html>

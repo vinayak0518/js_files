@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 50vw;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1">
+        <input type="text" id="ip1">
+        <span id="sp1" style="display: none;">must fill this form</span>
+        <span id="spu" style="display: none;">numbers are not allowed</span>
+        <input type="text" id="ip2">
+        <span id="spp" style="display: none;">password format is wrong</span>
+        <span id="sp2" style="display: none;">must fill this form</span>
+        <input type="submit" style="width: 100px;">
+    </form>
+</body>
+<script>
+    let form=document.getElementById("form1");
+    let ip1=document.getElementById("ip1");
+    let ip2=document.getElementById("ip2");
+    let sp1=document.getElementById("sp1");
+    let sp2=document.getElementById("sp2");
+    let alpha=/[a-z][A-Z]/;
+    let pswd=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8}$/;
+
+    form.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        if(ip1.value.length ==0 && ip2.value.length==0){
+            sp1.style.display='block';
+            sp2.style.display='block';
+            sp1.style.color='red';
+            sp2.style.color='green';
+            ip1.style.border="2px solid red";
+            ip2.style.border="2px solid red"
+        } 
+        else if(ip1.value.length==0){
+            sp1.style.display='block';
+            sp1.style.color='red';
+            ip1.style.border="2px solid red"; 
+        }
+        else if(!alpha.test(ip1.value)){
+            spu.style.display='block';
+            spu.style.color='red';
+            ip1.style.border="2px solid red"; 
+        }
+        else if(ip2.value==0){
+            sp2.style.display='block';
+            sp2.style.color='red';
+            ip2.style.border="2px solid red"; 
+        }
+        else if(!pswd.test(ip2.value)){
+            spp.style.display='block';
+            spp.style.color='red';
+            ip2.style.border="2px solid red";
+        }
+       
+
+
+   } )
+
+</script>
+</html>

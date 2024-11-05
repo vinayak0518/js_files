@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //     function promise1(){
+      //   const pr = new Promise((resolve, reject) => {
+      //     setTimeout(() => {
+      //       if (true) {
+      //         resolve("promise1 is resolved");
+      //       } else {
+      //         reject("promise1 is rejected");
+      //       }
+      //     }, 500);
+      //   });
+      //   return pr;
+      // }
+      //   //console.log(pr)
+      //   //pr.then((e)=>{console.log(e)})
+      //   //pr.then((x)=>{console.log(x)}).catch((e)=>{console.log(e)})
+      // function promise2(){
+      //   const pr1 = new Promise((res, rej) => {
+      //     setTimeout(() => {
+      //       if (true) {
+      //         res("promise2 is resolved");
+      //       } else {
+      //         rej("promise2 is rejected");
+      //       }
+      //     }, 1500);
+      //   });
+      //   return pr1;
+      // }
+      // function promise3(){
+      //   const pr2 = new Promise((res, rej) => {
+      //     setTimeout(() => {
+      //       if (true) {
+      //         res("promise3 resolved");
+      //       } else {
+      //         rej("promise3 rejected");
+      //       }
+      //     }, 900);
+      //   });
+      //   return pr2;
+      // }
+      //   //pr1.then((v)=>{console.log(v)}).catch((j)=>{console.log(j)})
+      //   promise1().then((e) => {
+      //     console.log(e);
+      //     return promise2();
+      //   })
+      //     .then((x) => {
+      //       console.log(x);
+      //       return promise3();
+      //     })
+      //     .then((r) => {
+      //       console.log(r);
+      //     })
+      //     .catch((h) => {
+      //       console.log(h);
+      //     }).finally(()=>{console.log('promises executed');
+      //     });
+
+      function signup() {
+        const signup = new Promise((res, rej) => {
+          setTimeout(() => {
+            rej("signup not successful");
+          }, 1000);
+        });
+        return signup;
+      }
+      function login() {
+        const login = new Promise((res, rej) => {
+          setTimeout(() => {
+            res("login completed");
+          }, 500);
+        });
+        return login;
+      }
+      function home() {
+        const home = new Promise((res, rej) => {
+          setTimeout(() => {
+            res("home loaded");
+          }, 1000);
+        });
+        return home;
+      }
+      signup()
+        .then((e) => {
+          console.log(e);
+          return login();
+        })
+        .then((x) => {
+          console.log(x);
+          return home();
+        })
+        .then((z) => {
+          console.log(z);
+        })
+        .catch((e) => {
+          console.log(e);
+        }).finally(()=>{console.log('succesfull')})
+    </script>
+  </body>
+</html>

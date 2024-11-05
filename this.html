@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button onclick="this.style.color='red'">click</button> -->
+    <!-- <button id="btn">click</button> -->
+    <script>
+        // var a=20;
+        // //console.log(a);
+        
+        // console.log(this)
+        // a='hi'
+        // const obj={
+        //     a:"hello",
+        //     b:function demo(){
+        //         console.log(a);
+        //     }
+        // }
+        // obj.b()
+        // let button=document.getElementById("btn")
+        // button.addEventListener("click",function(){
+        //     // button.style.color="red"
+        //     this.style.color="red"
+        // })
+
+        // const obj1={
+        //     a:"html",
+        //     c:function(x,y){
+        //         console.log(`hello`,this.b,this.a,x,y);
+        //     }
+        // }
+        // const obj2={
+        //     b:"js",
+        //     a:"welo"
+        // }
+        // obj1.c.call(obj2,"10k","hyd")
+
+        const movie={
+            moviename:'ss',
+            screen:'screen1',
+            play:function(x,y){
+                console.log(`movie-${this.moviename} is showing in ${this.screen} with ${x} at time ${y}`);    
+            }
+        }
+        let devara={
+            moviename:'devara',
+            screen:'screen2'
+        }
+        let devaraobj=movie.play.bind(devara);
+        devaraobj("5shows","5am")
+        console.log('hello');
+        devaraobj("6shows","6am")
+
+    </script>
+</body>
+</html>

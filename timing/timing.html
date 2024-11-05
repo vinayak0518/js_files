@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h">click</h1>
+    <script>
+        // let el=document.getElementById("h")
+        // let z=setInterval(() => {
+        //     el.style.display="none"
+        // }, 5000);
+        // el.addEventListener("click",()=>{
+        //     clearTimeout(z)
+        // })
+
+    //     function demo1(x){
+    //         setTimeout(() => {
+    //         console.log("iam demo");
+    //          x()   
+    //         }, 2000);
+    //     }
+    //     function demo2(y){
+    //         setTimeout(()=>{
+    //         console.log("iam demo2");
+    //          y()
+    //     },500);
+    // }
+    //     function demo3(){
+    //         setTimeout(()=>{
+    //         console.log('iam demo3');
+    //     },0);
+    // }
+    //     demo1(() => {
+    //         demo2(()=>{
+    //             demo3();
+    //         });
+    //     });
+    
+
+
+    function learnhtml(x){
+        setTimeout(()=>{
+            console.log('html'); 
+            x()   
+        },3000)
+    }
+    function learncss(y){
+        setTimeout(()=>{
+            console.log('css');
+            y()
+        },500)
+    }
+    function learnjs(){
+        setTimeout(()=>{
+            console.log('js');  
+        },0)
+    }
+    
+    learnhtml(()=>{
+        learncss(()=>{
+            learnjs()
+        });
+    })
+    </script>
+</body>
+</html>
